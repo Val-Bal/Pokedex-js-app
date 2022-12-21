@@ -15,7 +15,6 @@ Primary Color (light blue): #88eae8;
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    /* font-family: 'Times New Roman', serif; */
     background-color: var(--primary-color);
     color: var(--text-color);
 }
