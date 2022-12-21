@@ -1,0 +1,21 @@
+/*
+Colors used
+
+Text Color: #black;
+Primary Color (light blue): #88eae8;
+ */
+
+/* || VARIABLES */
+:root {
+    --text-color: black;
+    --primary-color: #88eae8;
+}
+
+/* || GENERAL */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Times New Roman', serif; */
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
