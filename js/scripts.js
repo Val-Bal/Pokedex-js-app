@@ -8,3 +8,6 @@ pokemonList.push(
     { name: "Dratini", height: 8, types: ['dragon'] },
 );
 
+for (let i = 0; i < pokemonList.length; i++) {
+    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ")");
+}
