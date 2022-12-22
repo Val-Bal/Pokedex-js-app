@@ -29,8 +29,10 @@ pokemonList.push(
 );
 
 for (let i = 0; i < pokemonList.length; i++) {
+    document.write("<li>");
     document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m) ");
     if (pokemonList[i].height > 0.7) {
         document.write(" - Wow, that’s big!");
     }
+    document.write("</li>");
 }
