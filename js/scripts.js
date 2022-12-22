@@ -1,5 +1,7 @@
+// create an array 
 let pokemonList = [];
 
+// push objects with Pokemon details to the array
 pokemonList.push(
     {
         name: "Bulbasaur",
@@ -28,9 +30,11 @@ pokemonList.push(
     },
 );
 
+// create for loop to list all the Pokemon in the array and write on the DOM
 for (let i = 0; i < pokemonList.length; i++) {
     document.write("<li>");
     document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m) ");
+    // add a conditional 
     if (pokemonList[i].height > 0.7) {
         document.write(" - Wow, that’s big!");
     }
