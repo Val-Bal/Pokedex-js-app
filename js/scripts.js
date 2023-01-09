@@ -89,6 +89,18 @@ pokemonList.push(
 );
 */
 
+//return pokemonList through pokemonRepository
+pokemonRepository.getAll.forEach(function (pokemon) {
+    document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "m)");
+
+    // add a conditional 
+    if (pokemon.height > 0.7) {
+        document.write(" - Wow, that’s big!" + "</p>");
+    }
+});
+
+
+/* OLD! without pokemonRepository
 // create for loop to list all the Pokemon in the array and write on the DOM with ForEach
 pokemonList.forEach(function (pokemon) {
     document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "m)");
@@ -98,7 +110,7 @@ pokemonList.forEach(function (pokemon) {
         document.write(" - Wow, that’s big!" + "</p>");
     }
 });
-
+*/
 
 /*
 1. In the “scripts.js” file of your project, wrap your pokemonList array in an IIFE to avoid accidentally accessing the global state.
