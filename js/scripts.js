@@ -9,36 +9,40 @@ let pokemonRepository = (function () {
         add: function (pokemon) {
             pokemonList.push(pokemon);
         }
-    }
-    pokemonRepository.add(
-        {
-            name: "Bulbasaur",
-            height: 0.7,
-            types: ['grass', 'poison']
-        },
-        {
-            name: "Charmander",
-            height: 0.6,
-            types: ['fire']
-        },
-        {
-            name: "Squirtle",
-            height: 0.5,
-            types: ['water']
-        },
-        {
-            name: "Pikachu",
-            height: 0.4,
-            types: ['electric']
-        },
-        {
-            name: "Dratini",
-            height: 1.8,
-            types: ['dragon']
-        }
-    );
-    console.log(pokemonRepository.getAll);
+    };
 })();
+
+// add Pokemon to array 
+pokemonRepository.add(
+    {
+        name: "Bulbasaur",
+        height: 0.7,
+        types: ['grass', 'poison']
+    },
+    {
+        name: "Charmander",
+        height: 0.6,
+        types: ['fire']
+    },
+    {
+        name: "Squirtle",
+        height: 0.5,
+        types: ['water']
+    },
+    {
+        name: "Pikachu",
+        height: 0.4,
+        types: ['electric']
+    },
+    {
+        name: "Dratini",
+        height: 1.8,
+        types: ['dragon']
+    }
+);
+
+console.log(pokemonRepository.getAll());
+
 
 /*
 // push objects with Pokemon details to the array
