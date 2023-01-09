@@ -30,13 +30,12 @@ pokemonList.push(
     },
 );
 
-// create for loop to list all the Pokemon in the array and write on the DOM
-for (let i = 0; i < pokemonList.length; i++) {
-    document.write("<li>");
-    document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + "m) ");
+// create for loop to list all the Pokemon in the array and write on the DOM with ForEach
+pokemonList.forEach(function (pokemon) {
+    document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "m)");
+
     // add a conditional 
-    if (pokemonList[i].height > 0.7) {
-        document.write(" - Wow, that’s big!");
+    if (pokemon.height > 0.7) {
+        document.write(" - Wow, that’s big!" + "</p>");
     }
-    document.write("</li>");
-}
+});
