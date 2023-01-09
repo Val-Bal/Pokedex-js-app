@@ -2,14 +2,28 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
 
+    function getAll() {
+        return pokemonList;
+    }
+
+    function add(pokemon) {
+        pokemonList.push(pokemon);
+    }
+
     return {
-        getAll: function () {
-            return pokemonList;
-        },
-        add: function (pokemon) {
-            pokemonList.push(pokemon);
-        }
+        getAll: getAll,
+        add: add
     };
+    /* alternative, less neat way
+        return {
+            getAll: function () {
+                return pokemonList;
+            },
+            add: function (pokemon) {
+                pokemonList.push(pokemon);
+            }
+        };
+        */
 })();
 
 // add Pokemon to array 
