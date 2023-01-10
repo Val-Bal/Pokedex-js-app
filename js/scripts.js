@@ -32,22 +32,34 @@ pokemonRepository.add(
         name: "Bulbasaur",
         height: 0.7,
         types: ['grass', 'poison']
-    },
+    }
+);
+
+pokemonRepository.add(
     {
         name: "Charmander",
         height: 0.6,
         types: ['fire']
-    },
+    }
+);
+
+pokemonRepository.add(
     {
         name: "Squirtle",
         height: 0.5,
         types: ['water']
-    },
+    }
+);
+
+pokemonRepository.add(
     {
         name: "Pikachu",
         height: 0.4,
         types: ['electric']
-    },
+    }
+);
+
+pokemonRepository.add(
     {
         name: "Dratini",
         height: 1.8,
@@ -90,7 +102,7 @@ pokemonList.push(
 */
 
 //return pokemonList through pokemonRepository
-pokemonRepository.getAll.forEach(function (pokemon) {
+pokemonRepository.getAll().forEach(function (pokemon) {
     document.write("<p>" + pokemon.name + " (height: " + pokemon.height + "m)");
 
     // add a conditional 
