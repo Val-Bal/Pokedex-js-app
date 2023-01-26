@@ -10,7 +10,6 @@ let pokemonRepository = (function () {
         pokemonList.push(pokemon);
     }
 
-    //new function
     function addListItem(pokemon) {
         let pokemonList = document.querySelector(".pokemon-list");
         let listpokemon = document.createElement("li");
@@ -19,12 +18,18 @@ let pokemonRepository = (function () {
         button.classList.add("button-class");
         listpokemon.appendChild(button);
         pokemonList.appendChild(listpokemon);
+        button.addEventListener("click", (Event) => showDetails(pokemon));
+    }
+
+    function showDetails(pokemon) {
+        console.log(pokemon);
     }
 
     return {
         getAll: getAll,
         add: add,
-        addListItem: addListItem
+        addListItem: addListItem,
+        showDetails: showDetails
     };
     /* alternative, less neat way
         return {
@@ -37,6 +42,29 @@ let pokemonRepository = (function () {
         };
         */
 })();
+
+
+
+/*
+As a final step, add an event listener to each newly created button for each Pokémon in the list. You’ll need it in a later task:
+
+Create a new function either above or below addListItem() and call it showDetails(). The function should expect one parameter: pokemon. 
+Inside the function, run a console.log() on the Pokémon object that’s passed as the parameter. You’ll do more than just log the data in a later task.
+
+In your addListItem() function, add an event listener to the button you created. It should listen to a click. As for its event handler function, 
+call the showDetails function there, passing the pokemon object as a parameter when a Pokémon is clicked. 
+This parameter should be the same parameter as addListItem(). Note: You might have thought of this already, 
+but you don’t need to select the button using querySelector() to add event listeners if you’ve already created the element using 
+createElement() within your JavaScript. Simply add the event listener to the variable that’s been assigned with document.createElement('button').
+
+TIP! Remember to use line breaks and comments to organize larger and more complex code files. This is true for all three of your files (HTML, CSS, and JavaScript).
+
+
+*/
+
+
+
+
 
 // add Pokemon to array with add() 
 
