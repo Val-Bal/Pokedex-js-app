@@ -1,6 +1,7 @@
 // created new variable pokemonRepository to hold the pokemonList array and wrapped it in an IIFE  to avoid accessing the global state 
 let pokemonRepository = (function () {
     let pokemonList = [];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     function getAll() {
         return pokemonList;
@@ -25,11 +26,28 @@ let pokemonRepository = (function () {
         console.log(pokemon);
     }
 
+    function loadList() {
+        return fetch(apiUrl).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+            });
+        }).catch(function (e) {
+            console.error(e);
+        })
+    }
+
     return {
         getAll: getAll,
         add: add,
-        addListItem: addListItem,
-        showDetails: showDetails
+        //addListItem: addListItem,
+        //showDetails: showDetails
+        loadList: loadList
     };
     /* alternative, less neat way
         return {
@@ -46,26 +64,37 @@ let pokemonRepository = (function () {
 
 
 /*
-As a final step, add an event listener to each newly created button for each Pokémon in the list. You’ll need it in a later task:
+2. In the “scripts.js” file of your project, remove the array of Pokémon objects and replace it with an empty array.
 
-Create a new function either above or below addListItem() and call it showDetails(). The function should expect one parameter: pokemon. 
-Inside the function, run a console.log() on the Pokémon object that’s passed as the parameter. You’ll do more than just log the data in a later task.
+3. Add function(s) inside your data repository to load data from an external source.
+- Add a LoadList() function as a return key that uses fetch to GET the complete list of Pokémon from here: https://pokeapi.co/api/v2/pokemon/
+- Use the add() function to add each Pokémon from the results to your pokemonList variable. 
+Make sure to set name and detailsUrl as the keys. Use this as a reference to see what the API response looks like.
+- Add a loadDetails() function, as well. The loadDetails() function should expect a parameter with a Pokémon object as a parameter. 
+loadDetails() should GET the Pokémon details using the URL from the Pokémon object in the parameter.
+- Once the GET request is complete, use then to return a JSON response.
+- then, assign some of the details you got from the response to the Pokémon in the pokemonList. Assign at least imgUrl and height.
+- Make sure both functions LoadList() and loadDetails() are assigned to keys with the same name in the returned object of your pokemonRepository.
 
-In your addListItem() function, add an event listener to the button you created. It should listen to a click. As for its event handler function, 
-call the showDetails function there, passing the pokemon object as a parameter when a Pokémon is clicked. 
-This parameter should be the same parameter as addListItem(). Note: You might have thought of this already, 
-but you don’t need to select the button using querySelector() to add event listeners if you’ve already created the element using 
-createElement() within your JavaScript. Simply add the event listener to the variable that’s been assigned with document.createElement('button').
+4. Make sure the Pokémon list is only rendered after you’ve gotten all information from the server.
+- Call the LoadList() function of pokemonRepository.
+- Then, execute getAll from the pokemonRepository.
 
-TIP! Remember to use line breaks and comments to organize larger and more complex code files. This is true for all three of your files (HTML, CSS, and JavaScript).
+5. forEach Pokémon, call the addListItem() function you wrote in the previous Exercise.
 
+6. Edit your showDetails() function to load the Pokémon details from the API instead of loading static data:
+- Inside the showDetails() function, call the loadDetails() function from above. Pass as parameter the Pokémon object.
+- Log the result in the console (you’ll display it in the interface in the next Exercise).
+- Make sure both functions LoadList() and loadDetails() are assigned to keys with the same name in the returned object of your pokemonRepository.
 
+7. You should now see a list displaying all Pokémon. When you click one, it might take a short moment to load before you see a console.log() with the returned Pokémon object.
+Commit the changes in Git and submit the link to your GitHub repository here. Feel free to share additional thoughts or ask questions on your submission page.
 */
 
 
 
 
-
+/* block out pokemon list
 // add Pokemon to array with add() 
 
 pokemonRepository.add(
@@ -110,6 +139,7 @@ pokemonRepository.add(
 
 console.log(pokemonRepository.getAll());
 
+*/
 
 /*
 // push objects with Pokemon details to the array
@@ -141,6 +171,7 @@ pokemonList.push(
     }
 );
 */
+
 
 //return pokemonList through pokemonRepository, don't forget the () to call function
 pokemonRepository.getAll().forEach(function (pokemon) {
