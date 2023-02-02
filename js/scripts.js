@@ -22,12 +22,14 @@ let pokemonRepository = (function () {
           pokemonList.appendChild(listpokemon);
           button.addEventListener("click", (Event) => showDetails(pokemon));
       }
-  
-    
-      function showDetails(pokemon) {
-          console.log(pokemon);
-      }
-  */
+   */
+
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function () {
+            console.log(pokemon);
+        });
+    }
+
     function loadList() {
         return fetch(apiUrl).then(function (response) {
             return response.json();
@@ -62,7 +64,7 @@ let pokemonRepository = (function () {
         getAll: getAll,
         add: add,
         //addListItem: addListItem,
-        //showDetails: showDetails
+        showDetails: showDetails
         loadList: loadList,
         loadDetails: loadDetails
     };
