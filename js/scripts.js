@@ -1,5 +1,6 @@
 // created new variable pokemonRepository to hold the pokemonList array and wrapped it in an IIFE  to avoid accessing the global state 
 let pokemonRepository = (function () {
+    //create empty array and load data from api
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
@@ -61,21 +62,40 @@ let pokemonRepository = (function () {
         });
     }
 
+    // show details of pokemon with modal
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
-            console.log(pokemon);
+            showDetailsModal(pokemon);
         });
     }
 
+    function showDetailsModal(pokemon) {
+        let modalTitle = document.querySelector('.modal-title');
+        let modalBody = document.querySelector('.modal-body');
+
+        modalBody.innerHTML = '';
+
+        let image = document.querySelector(pokemon.imageUrl);
+        let height = document.querySelector(pokemon.height);
+        let types = document.querySelector(pokemon.types);
+
+        modalBody.append(image);
+        modalBody.append(height);
+        modalBody.append(types);
+    }
+
+    // all functions which are returned
     return {
         getAll: getAll,
         add: add,
         addListItem: addListItem,
         showDetails: showDetails,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        showDetailsModal: showDetailsModal
     };
 })();
+
 
 //return pokemonList through pokemonRepository, don't forget the () to call function
 pokemonRepository.loadList().then(function () {
@@ -85,3 +105,5 @@ pokemonRepository.loadList().then(function () {
 });
 
 console.log(pokemonRepository);
+
+
