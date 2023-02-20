@@ -8,30 +8,57 @@ Primary Color (light blue): #88eae8;
 /* || VARIABLES */
 :root {
     --text-color: black;
-    --primary-color: #88eae8;
+    --background-color: linear-gradient(#e66465, #9198e5);
 }
 
 /* || GENERAL */
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background-color: var(--primary-color);
+    background-color: linear-gradient(#e66465, #9198e5);
     color: var(--text-color);
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
 }
 
 .button-class {
     border: none;
+    border-radius: 25px;
+    height: 170px;
+    width: 170px;
     color: white;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
     background-color: white;
     color: black;
-    border: 2px solid hsl(67, 59%, 75%);
+    border: 2px solid black;
   }
+
+
+/* || MODAL DESIGN */
+
+ul {
+    list-style-type: none;
+}
+  .modal-container { 
+
+  }
+
+  .modal-title { 
+
+}
+
+.modal-body { 
+
+}
+
