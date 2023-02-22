@@ -15,9 +15,11 @@
     </div>
 
     <!-- Modal for Pokemon Details-->
-    <div class="modal-container">
+    <div id="modal-container">
         <div class="modal">
-            <button class="modal-close">close</button>
+            <button class="modal-close" onclick="pokemonRepository.hideModal()">
+                close
+            </button>
             <h2 class="modal-title"></h2>
             <p class="modal-body"></p>
         </div>
