@@ -62,13 +62,13 @@ let pokemonRepository = (function () {
         });
     }
 
-    /*// show details of pokemon with modal
+    // show details of pokemon with modal
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
             showDetailsModal(pokemon);
         });
     }
-*/
+
     function showModal() {
         let modalContainer = document.querySelector("#modal-container");
         modalContainer.classList.add("is-visible");
