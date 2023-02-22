@@ -24,7 +24,7 @@ h1 {
     text-align: center;
     font-size: 40px;
 }
-ddd
+
 
 .button-class {
     border: none;
@@ -48,12 +48,13 @@ ddd
 
 
 /* || MODAL DESIGN */
-/*
+
 ul {
     list-style-type: none;
 }
 
-  .modal-container { 
+/*
+.modal-container { 
     display: none;
   }
 
@@ -116,7 +117,7 @@ ul {
     margin-top: 0;
 }
     
-    .modal p {
+.modal p {
     padding-left: 10px;
     margin-bottom: 0;
 }
