@@ -114,7 +114,7 @@ let pokemonRepository = (function () {
 
         // create height element
         let heightElement = document.createElement("p");
-        heightElement.innerText = Height: ${ pokemon.height };
+        heightElement.innerText = `Height: ${pokemon.height}`;
 
         // append pokemon elements to modal
         modalTitle.append(nameElement);
@@ -133,7 +133,8 @@ let pokemonRepository = (function () {
         showDetails: showDetails,
         loadList: loadList,
         loadDetails: loadDetails,
-        showDetailsModal: showDetailsModal
+        showDetailsModal: showDetailsModal,
+        hideModal: hideModal
     };
 })();
 
