@@ -52,6 +52,7 @@ let pokemonRepository = (function () {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
             return response.json();
+            //console.log("response");
         }).then(function (details) {
             // following code adds the details to the item
             item.imageUrl = details.sprites.front_default;
@@ -138,9 +139,7 @@ let pokemonRepository = (function () {
     };
 })();
 
-
-
-//return pokemonList through pokemonRepository, don't forget the () to call function
+//return pokemonList through pokemonRepository
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
         pokemonRepository.addListItem(pokemon);
