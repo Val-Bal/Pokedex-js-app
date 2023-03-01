@@ -107,7 +107,7 @@ let pokemonRepository = (function () {
         modalBody.empty();
         modalTitle.empty();
 
-        let nameElement = $("<h1>" + pokemon.name + "</h1>");
+        let nameElement = $("<h2>" + pokemon.name + "</h2>");
         let imageElement = $(`<img class='model-img' src="${pokemon.imageUrl}">`);
         let heightElement = $("<p>" + "Height: " + pokemon.height + "<p>");
 
