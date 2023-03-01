@@ -23,10 +23,15 @@ Primary Color (light blue): #88eae8;
 h1 {
     text-align: center;
     font-size: 40px;
+    
 }
 
+h1::first-letter,
+.pokemon-button::first-letter {
+    text-transform:capitalize;
+}
 
-.button {
+.pokemon-button{
     border: none;
     border-radius: 25px;
     height: 170px;
@@ -53,6 +58,7 @@ ul {
     list-style-type: none;
 }
 
+
 /* 
 #modal-container.is-visible {
     position: fixed;
@@ -74,8 +80,7 @@ ul {
     display: grid;
     text-align: center;
 }*/
-/*
-.modal {
+ .modal {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
@@ -93,7 +98,7 @@ ul {
     background: none;
     color: #777;
     text-decoration: underline;
-}
+} 
     
 .modal h1,
 .modal p {
