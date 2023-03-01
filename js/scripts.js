@@ -24,7 +24,7 @@ let pokemonRepository = (function () {
         let pokemonList = $(".pokemon-list");
         let listpokemon = $("<li></li>");
 
-        let button = $("<button class='btn' data-target='#pokemon-modal' data-toggle='modal'> + pokemon.name + </button>");
+        let button = $(`<button class='btn' data-target='#pokemon-modal' data-toggle='modal'> ${pokemon.name} </button>"`);
 
         listpokemon.append(button);
         pokemonList.append(listpokemon);
@@ -108,7 +108,7 @@ let pokemonRepository = (function () {
         modalTitle.text(pokemon.name);
 
         let nameElement = $("<h1>" + pokemon.name + "</h1>");
-        let imageElement = $("<img class='model-img' src='pokemon.imageUrl'>");
+        let imageElement = $(`<img class='model-img' src="${pokemon.imageUrl}">`);
         let heightElement = $("<p>" + "Height: " + pokemon.height + "<p>");
 
 
