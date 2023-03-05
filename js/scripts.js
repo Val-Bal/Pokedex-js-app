@@ -11,25 +11,25 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         // optional enter validations
         if (
-            typeof pokemon === "object" &&
-            "name" in pokemon
+            typeof pokemon === 'object' &&
+            'name' in pokemon
         ) {
             pokemonList.push(pokemon);
         } else {
-            console.log("pokemon is not correct");
+            console.log('pokemon is not correct');
         }
     }
 
     function addListItem(pokemon) {
-        let pokemonList = $(".pokemon-list");
-        let listpokemon = $("<li></li>");
+        let pokemonList = $('.pokemon-list');
+        let listpokemon = $('<li></li>');
 
         let button = $(`<button class='btn pokemon-button' data-target='#pokemon-modal' data-toggle='modal'> ${pokemon.name} </button>"`);
 
         listpokemon.append(button);
         pokemonList.append(listpokemon);
 
-        button.on("click", function () {
+        button.on('click', function () {
             showDetails(pokemon);
         });
     }
@@ -101,15 +101,15 @@ let pokemonRepository = (function () {
     */
 
     function showDetailsModal(pokemon) {
-        let modalTitle = $(".modal-title");
-        let modalBody = $(".modal-body");
+        let modalTitle = $('.modal-title');
+        let modalBody = $('.modal-body');
 
         modalBody.empty();
         modalTitle.empty();
 
-        let nameElement = $("<h2>" + pokemon.name + "</h2>");
+        let nameElement = $('<h2>" + pokemon.name + "</h2>');
         let imageElement = $(`<img class='pokemon-img' src="${pokemon.imageUrl}">`);
-        let heightElement = $("<p>" + "Height: " + pokemon.height + "<p>");
+        let heightElement = $('<p>" + "Height: " + pokemon.height + "<p>');
 
 
         modalTitle.append(nameElement);
